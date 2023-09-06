@@ -49,9 +49,29 @@ void f2() {
     }
 }
 
+void f3Helper(List a) {
+    a.append(4);
+
+    cout << "a:" << endl;
+    for (int i=0; i<a.size(); ++i) {
+        cout << "[" << i << "] : " << a[i] << endl;
+    }
+}
+
+void f3() {
+    List a;
+    a.append(2);
+    a.append(3);
+    f3Helper(a);
+    cout << "a:" << endl;
+    for (int i=0; i<a.size(); ++i) {
+        cout << "[" << i << "] : " << a[i] << endl;
+    }
+}
+
 int main(int argc, const char * argv[]) {
     f1();
     f2();
-
+    f3();
     return 0;
 }
