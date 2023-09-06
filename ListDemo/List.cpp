@@ -19,10 +19,12 @@ List::~List() {
 }
 
 List& List::operator=(const List &src) {
-    // deallocate existing dynamic array
-    delete [] _data;
-    // copy the data
-    copy(src);
+    if (this != &src) {
+        // deallocate existing dynamic array
+        delete [] _data;
+        // copy the data
+        copy(src);
+    }
     return *this;
 }
 
