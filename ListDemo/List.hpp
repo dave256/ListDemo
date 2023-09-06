@@ -17,7 +17,7 @@ public:
     List(size_t capacity=10); // constructor - allocates dynamic array
     ~List(); // destructor - deallocates dynamic memory
 
-    // missing necessary dynamic memory methods
+    List(const List &src); // think about why parameter needs to be passed by reference
     List& operator=(const List &src); // assignment operator
 
     int operator[](size_t pos) const; // bracket operator for rhs (needed for const List parameters)

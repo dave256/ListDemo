@@ -18,6 +18,10 @@ List::~List() {
     delete [] _data;
 }
 
+List::List(const List &src) {
+    copy(src);
+}
+
 List& List::operator=(const List &src) {
     if (this != &src) {
         // deallocate existing dynamic array
