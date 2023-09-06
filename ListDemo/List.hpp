@@ -18,6 +18,7 @@ public:
     ~List(); // destructor - deallocates dynamic memory
 
     // missing necessary dynamic memory methods
+    List& operator=(const List &src); // assignment operator
 
     int operator[](size_t pos) const; // bracket operator for rhs (needed for const List parameters)
     int& operator[](size_t pos); // bracket operator for lhs
@@ -26,6 +27,7 @@ public:
     size_t size() const { return _size; }
 
 private:
+    void copy(const List &src);
     void resize(size_t new_size); // allocate new larger array
     int *_data; // dynamic array
     size_t _size; // size of dynamic array

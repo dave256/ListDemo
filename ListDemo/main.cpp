@@ -33,8 +33,25 @@ void f1() {
     }
 }
 
+void f2Helper(List &a, List &b) {
+    a = b;
+}
+
+void f2() {
+    List a;
+
+    a.append(3);
+    f2Helper(a, a);
+
+    cout << "a:" << endl;
+    for (int i=0; i<a.size(); ++i) {
+        cout << "[" << i << "] : " << a[i] << endl;
+    }
+}
+
 int main(int argc, const char * argv[]) {
     f1();
+    f2();
 
     return 0;
 }
